@@ -22,8 +22,7 @@ The pet detector from above uses transfer learning on Faster R-CNN with Resnet-1
   - `./download-upload-model.sh`, it
     * downloads the model locally
     * uploads the model to google cloud
-  - `./setup-training.sh`, it
-    * packages the Tensorflow Object Detection code.
+  - `./setup-training.sh`
     * writes a cluster configuration for Google Cloud ML job.
     * creates a training script in `training/dist/run-training.sh`
   - `./run-training.sh`
