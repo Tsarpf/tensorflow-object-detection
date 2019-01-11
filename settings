@@ -1,0 +1,6 @@
+export BUCKET=penbucket
+export BUCKET_FOLDER=testink
+export MODEL_NAME=faster_rcnn_resnet101_coco_11_06_2017
+export MODEL_DOWNLOAD_URL=http://storage.googleapis.com/download.tensorflow.org/models/object_detection
+export MODEL_OUTPUT_DIR=output
+export COMPUTE_REGION=europe-west1
