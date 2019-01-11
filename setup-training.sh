@@ -1,4 +1,4 @@
 (cd training/
-./get-tools.sh
 ./create-training-scripts.sh
+./upload-config.sh
 )

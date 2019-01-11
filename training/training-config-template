@@ -102,7 +102,7 @@ train_config: {
     use_moving_average: false
   }
   gradient_clipping_by_norm: 10.0
-  fine_tune_checkpoint: "gs://${BUCKET}/${BUCKET_FOLDER}/model/model.ckpt"
+  fine_tune_checkpoint: "gs://BUCKET/BUCKET_FOLDER/model.ckpt"
   from_detection_checkpoint: true
   load_all_detection_checkpoint_vars: true
   # Note: The below line limits the training process to 200K steps, which we
@@ -118,9 +118,9 @@ train_config: {
 
 train_input_reader: {
   tf_record_input_reader {
-    input_path: "gs://${BUCKET}/${BUCKET_FOLDER}/train.record"
+    input_path: "gs://BUCKET/BUCKET_FOLDER/train.record"
   }
-  label_map_path: "gs://${BUCKET}/${BUCKET_FOLDER}/label-map.pbtxt"
+  label_map_path: "gs://BUCKET/BUCKET_FOLDER/label-map.pbtxt"
 }
 
 eval_config: {
@@ -130,9 +130,9 @@ eval_config: {
 
 eval_input_reader: {
   tf_record_input_reader {
-    input_path: "gs://${BUCKET}/${BUCKET_FOLDER}/test.record"
+    input_path: "gs://BUCKET/BUCKET_FOLDER/test.record"
   }
-  label_map_path: "gs://${BUCKET}/${BUCKET_FOLDER}/label-map.pbtxt"
+  label_map_path: "gs://BUCKET/BUCKET_FOLDER/label-map.pbtxt"
   shuffle: false
   num_readers: 1
 }

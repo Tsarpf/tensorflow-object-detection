@@ -8,6 +8,13 @@ NUM_CLASSES=$(sed '1d' ../classes.txt | wc -l)
 sed -i "s/NUM_CLASSES_REPLACE/"${NUM_CLASSES}"/g" \
      ./dist/training.config
 
+sed -i "s/BUCKET_FOLDER/"${BUCKET_FOLDER}"/g" \
+     ./dist/training.config
+
+sed -i "s/BUCKET/"${BUCKET}"/g" \
+     ./dist/training.config
+
+
 
 # Create a training script from template
 cp run-training-template dist/run-training.sh
