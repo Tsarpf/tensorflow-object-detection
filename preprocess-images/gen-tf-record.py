@@ -51,10 +51,6 @@ flags.DEFINE_string('output_path', '', 'Path to output TFRecord')
 flags.DEFINE_string('image_dir', '', 'Path to images')
 FLAGS = flags.FLAGS
 
-#--csv_input=dist/train.csv  
-# --output_path=dist/train.record 
-# --image_dir=images
-
 #FLAGS.csv_input = 'preprocess-images/dist/train.csv'
 #FLAGS.output_path = 'preprocess-images/dist/train.record'
 #FLAGS.image_dir = 'preprocess-images/images'
