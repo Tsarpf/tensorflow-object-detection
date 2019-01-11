@@ -1,2 +1,2 @@
-add one class per line here, this first line is ignored. line idx should match the idx in preprocess-images/label-map.pbtxt,   and name should match the ones generated to preprocess-images/dist/train.csv and preprocess-images/dist/train.csv from labelImg xml files
+add one class per line here, this first line is ignored. preprocess-images/label-map.pbtxt is generated based on this file, names should match the ones generated to preprocess-images/dist/train.csv and preprocess-images/dist/train.csv from labelImg xml files
 pen
