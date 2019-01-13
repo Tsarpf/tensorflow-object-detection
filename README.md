@@ -39,16 +39,20 @@ As can be seen, some false positives (like the door handle) appear, and if the p
 Original             |  Detected
 :-------------------------:|:-------------------------:
 ![](https://github.com/Tsarpf/tensorflow-object-detection/raw/master/object-detection/test-images/IMG_20190113_111318.jpg)  |  ![](https://github.com/Tsarpf/tensorflow-object-detection/raw/master/object-detection/output/IMG_20190113_111318.jpg)
-![](https://github.com/Tsarpf/tensorflow-object-detection/raw/master/object-detection/test-images/IMG_20190113_111412.jpg) | ![](https://github.com/Tsarpf/tensorflow-object-detection/raw/master/object-detection/output/IMG_20190113_111412.jpg)
 ![](https://github.com/Tsarpf/tensorflow-object-detection/raw/master/object-detection/test-images/jetpens.jpg) | ![](https://github.com/Tsarpf/tensorflow-object-detection/raw/master/object-detection/output/jetpens.jpg)
 pen not detected
 ![](https://github.com/Tsarpf/tensorflow-object-detection/raw/master/object-detection/test-images/joulukuve.jpg) | ![](https://github.com/Tsarpf/tensorflow-object-detection/raw/master/object-detection/output/joulukuve.jpg)
+one pen missed, door handle false-positive
 ![](https://github.com/Tsarpf/tensorflow-object-detection/raw/master/object-detection/test-images/IMG_20190113_111438.jpg) | ![](https://github.com/Tsarpf/tensorflow-object-detection/raw/master/object-detection/output/IMG_20190113_111438.jpg)
 ![](https://github.com/Tsarpf/tensorflow-object-detection/raw/master/object-detection/test-images/pen-pic.jpg) | ![](https://github.com/Tsarpf/tensorflow-object-detection/raw/master/object-detection/output/pen-pic.jpg)
+two pens missed on bean bag:
 ![](https://github.com/Tsarpf/tensorflow-object-detection/raw/master/object-detection/test-images/IMG_20190113_111325.jpg) | ![](https://github.com/Tsarpf/tensorflow-object-detection/raw/master/object-detection/output/IMG_20190113_111325.jpg)
+a hard-to-find pen missed on bean bag:
 ![](https://github.com/Tsarpf/tensorflow-object-detection/raw/master/object-detection/test-images/IMG_20190113_111333.jpg) | ![](https://github.com/Tsarpf/tensorflow-object-detection/raw/master/object-detection/output/IMG_20190113_111333.jpg)
 ![](https://github.com/Tsarpf/tensorflow-object-detection/raw/master/object-detection/test-images/IMG_20190113_111457.jpg) | ![](https://github.com/Tsarpf/tensorflow-object-detection/raw/master/object-detection/output/IMG_20190113_111457.jpg)
+farthest away pen not detected
 ![](https://github.com/Tsarpf/tensorflow-object-detection/raw/master/object-detection/test-images/IMG_20190113_111504.jpg) | ![](https://github.com/Tsarpf/tensorflow-object-detection/raw/master/object-detection/output/IMG_20190113_111504.jpg)
+pens too far away, not detected at all!
 ![](https://github.com/Tsarpf/tensorflow-object-detection/raw/master/object-detection/test-images/IMG_20190113_111510.jpg) | ![](https://github.com/Tsarpf/tensorflow-object-detection/raw/master/object-detection/output/IMG_20190113_111510.jpg)
-previously unseen: 
-![](https://github.com/Tsarpf/tensorflow-object-detection/raw/master/object-detection/test-images/photo_2019-01-13_13-16-12.jpg) | ![](https://github.com/Tsarpf/tensorflow-object-detection/raw/master/object-detection/output/photo_2019-01-13_13-16-12.jpg)
+previously unseen pen: 
+![](https://github.com/Tsarpf/tensorflow-object-detection/raw/master/object-detection/test-images/unseen_white.jpg) | ![](https://github.com/Tsarpf/tensorflow-object-detection/raw/master/object-detection/output/unseen_white.jpg)
