@@ -33,3 +33,22 @@ The pet detector from above uses transfer learning on Faster R-CNN with Resnet-1
   - `(cd post-training && ./export-inference.sh)` exports .pb file.
   - `cd object-detection`, `python detect.py <path-to-file-to-be-detected>.jpg`, for example to run on test image that comes with the repo: `python detect.py test-images/jetpens.jpg`, the image with bounding boxes will appear in `output/jetpens.jpg` (in this case overwriting it as it's included in the repository)
 
+## Examples
+As can be seen, some false positives (like the door handle) appear, and if the pens are too far or the image is not clear enough, pens are sometimes missed. Unseen pens are sometimes also detected, even though around 290 out of 300 images in the train/validation set were on two pens, and just a handful of pictures with 5 other pens.
+
+Original             |  Detected
+:-------------------------:|:-------------------------:
+![](https://github.com/Tsarpf/tensorflow-object-detection/raw/master/object-detection/test-images/IMG_20190113_111318.jpg)  |  ![](https://github.com/Tsarpf/tensorflow-object-detection/raw/master/object-detection/output/IMG_20190113_111318.jpg)
+![](https://github.com/Tsarpf/tensorflow-object-detection/raw/master/object-detection/test-images/IMG_20190113_111412.jpg) | ![](https://github.com/Tsarpf/tensorflow-object-detection/raw/master/object-detection/output/IMG_20190113_111412.jpg)
+![](https://github.com/Tsarpf/tensorflow-object-detection/raw/master/object-detection/test-images/jetpens.jpg) | ![](https://github.com/Tsarpf/tensorflow-object-detection/raw/master/object-detection/output/jetpens.jpg)
+pen not detected
+![](https://github.com/Tsarpf/tensorflow-object-detection/raw/master/object-detection/test-images/joulukuve.jpg) | ![](https://github.com/Tsarpf/tensorflow-object-detection/raw/master/object-detection/output/joulukuve.jpg)
+![](https://github.com/Tsarpf/tensorflow-object-detection/raw/master/object-detection/test-images/IMG_20190113_111438.jpg) | ![](https://github.com/Tsarpf/tensorflow-object-detection/raw/master/object-detection/output/IMG_20190113_111438.jpg)
+![](https://github.com/Tsarpf/tensorflow-object-detection/raw/master/object-detection/test-images/pen-pic.jpg) | ![](https://github.com/Tsarpf/tensorflow-object-detection/raw/master/object-detection/output/pen-pic.jpg)
+![](https://github.com/Tsarpf/tensorflow-object-detection/raw/master/object-detection/test-images/IMG_20190113_111325.jpg) | ![](https://github.com/Tsarpf/tensorflow-object-detection/raw/master/object-detection/output/IMG_20190113_111325.jpg)
+![](https://github.com/Tsarpf/tensorflow-object-detection/raw/master/object-detection/test-images/IMG_20190113_111333.jpg) | ![](https://github.com/Tsarpf/tensorflow-object-detection/raw/master/object-detection/output/IMG_20190113_111333.jpg)
+![](https://github.com/Tsarpf/tensorflow-object-detection/raw/master/object-detection/test-images/IMG_20190113_111457.jpg) | ![](https://github.com/Tsarpf/tensorflow-object-detection/raw/master/object-detection/output/IMG_20190113_111457.jpg)
+![](https://github.com/Tsarpf/tensorflow-object-detection/raw/master/object-detection/test-images/IMG_20190113_111504.jpg) | ![](https://github.com/Tsarpf/tensorflow-object-detection/raw/master/object-detection/output/IMG_20190113_111504.jpg)
+![](https://github.com/Tsarpf/tensorflow-object-detection/raw/master/object-detection/test-images/IMG_20190113_111510.jpg) | ![](https://github.com/Tsarpf/tensorflow-object-detection/raw/master/object-detection/output/IMG_20190113_111510.jpg)
+previously unseen: 
+![](https://github.com/Tsarpf/tensorflow-object-detection/raw/master/object-detection/test-images/photo_2019-01-13_13-16-12.jpg) | ![](https://github.com/Tsarpf/tensorflow-object-detection/raw/master/object-detection/output/photo_2019-01-13_13-16-12.jpg)
