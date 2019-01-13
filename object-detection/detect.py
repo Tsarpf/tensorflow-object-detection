@@ -1,41 +1,43 @@
-# Almost directly from https://github.com/tensorflow/models/blob/master/research/object_detection/object_detection_tutorial.ipynb
+# Heavily based on https://github.com/tensorflow/models/blob/master/research/object_detection/object_detection_tutorial.ipynb
 
 import numpy as np
 import os
-#import six.moves.urllib as urllib
+import glob
 import sys
-#import tarfile
 import tensorflow as tf
 
 from distutils.version import StrictVersion
-#from collections import defaultdict
-#from io import StringIO
 from matplotlib import pyplot as plt
 from PIL import Image
 
+import argparse
+parser = argparse.ArgumentParser()
+parser.add_argument("path", help="give path to image to run the detector on")
+args = parser.parse_args()
+print(args.path)
+
+
 # This is needed since the notebook is stored in the object_detection folder.
 sys.path.append("..")
-from object_detection.utils import ops as utils_ops
+from object_detection_utils import ops as utils_ops
 
 if StrictVersion(tf.__version__) < StrictVersion('1.9.0'):
       raise ImportError('Please upgrade your TensorFlow installation to v1.9.* or later!')
 
 # # This is needed to display the images.
 # %matplotlib inline
-from utils import label_map_util
+from object_detection_utils import label_map_util
 
-from utils import visualization_utils as vis_util
+from object_detection_utils import visualization_utils as vis_util
 
-MODEL_NAME = 'exported_graphs'
-MODEL_FILE = MODEL_NAME + '.tar.gz'
-DOWNLOAD_BASE = 'http://download.tensorflow.org/models/object_detection/'
+MODEL_PATH = '../post-training/exported-graphs'
 
 # Path to frozen detection graph. This is the actual model that is used for the object detection.
-PATH_TO_FROZEN_GRAPH = MODEL_NAME + '/frozen_inference_graph.pb'
+PATH_TO_FROZEN_GRAPH = MODEL_PATH + '/frozen_inference_graph.pb'
 
 # List of the strings that is used to add correct label for each box.
 # TODO CHANGE THIS
-PATH_TO_LABELS = os.path.join('data', 'mscoco_label_map.pbtxt')
+PATH_TO_LABELS = os.path.join('../process-images/dist', 'label-map.pbtxt')
 
 detection_graph = tf.Graph()
 with detection_graph.as_default():
@@ -55,8 +57,8 @@ def load_image_into_numpy_array(image):
 
 
 PATH_TO_TEST_IMAGES_DIR = 'test_images'
-TEST_IMAGES = ['dj_tsurba.jpg', 'gluhwine.jpg', 'joulukuve.jpg', 'kitchen.jpg', 'pen_pic.jpg']
-TEST_IMAGE_PATHS = [os.path.join(PATH_TO_TEST_IMAGES_DIR, '{}'.format(i)) for i in TEST_IMAGES]
+#TEST_IMAGE_PATHS = glob.glob('./test-images/*.jpg')
+TEST_IMAGE_PATHS = [args.path]
 
 # Size, in inches, of the output images.
 IMAGE_SIZE = (24, 16)
@@ -129,4 +131,6 @@ for image_path in TEST_IMAGE_PATHS:
       line_thickness=8)
   plt.figure(figsize=IMAGE_SIZE)
   plt.imshow(image_np)
+  filename = image_path.split('/')[-1]
+  plt.imsave('output/%s' % filename, image_np)
 
