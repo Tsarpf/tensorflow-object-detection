@@ -33,7 +33,7 @@ The pet detector from above uses transfer learning on Faster R-CNN with Resnet-1
   - `(cd post-training && ./export-inference.sh)` exports .pb file.
   - `cd object-detection`, `python detect.py <path-to-file-to-be-detected>.jpg`, for example to run on test image that comes with the repo: `python detect.py test-images/jetpens.jpg`, the image with bounding boxes will appear in `output/jetpens.jpg` (in this case overwriting it as it's included in the repository)
 
-## Examples
+## Examples from `./object-detection/test-images`
 As can be seen, some false positives (like the door handle) appear, and if the pens are too far or the image is not clear enough, pens are sometimes missed. Unseen pens are sometimes also detected, even though around 290 out of 300 images in the train/validation set were on two pens, and just a handful of pictures with 5 other pens.
 
 Original             |  Detected
