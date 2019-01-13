@@ -39,8 +39,9 @@ As can be seen, some false positives (like the door handle) appear, and if the p
 Original             |  Detected
 :-------------------------:|:-------------------------:
 ![](https://github.com/Tsarpf/tensorflow-object-detection/raw/master/object-detection/test-images/IMG_20190113_111318.jpg)  |  ![](https://github.com/Tsarpf/tensorflow-object-detection/raw/master/object-detection/output/IMG_20190113_111318.jpg)
+(At least partially) Detected all previously unseen pens from a stock photo
 ![](https://github.com/Tsarpf/tensorflow-object-detection/raw/master/object-detection/test-images/jetpens.jpg) | ![](https://github.com/Tsarpf/tensorflow-object-detection/raw/master/object-detection/output/jetpens.jpg)
-pen not detected
+pen on the table not detected:
 ![](https://github.com/Tsarpf/tensorflow-object-detection/raw/master/object-detection/test-images/joulukuve.jpg) | ![](https://github.com/Tsarpf/tensorflow-object-detection/raw/master/object-detection/output/joulukuve.jpg)
 one pen missed, door handle false-positive
 ![](https://github.com/Tsarpf/tensorflow-object-detection/raw/master/object-detection/test-images/IMG_20190113_111438.jpg) | ![](https://github.com/Tsarpf/tensorflow-object-detection/raw/master/object-detection/output/IMG_20190113_111438.jpg)
