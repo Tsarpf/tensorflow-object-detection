@@ -26,4 +26,10 @@ The pet detector from above uses transfer learning on Faster R-CNN with Resnet-1
     * writes a cluster configuration for Google Cloud ML job.
     * creates a training script in `training/dist/run-training.sh`
   - `./run-training.sh`
+  - `./monitor-training-tensorboard.sh` to see training progress etc. in tensorboard
+  
+## After training (not fully scripted)
+  - Use f.ex `gsutil cp gs://yourbucket/model-output-folder/model* ./model-checkpoints/` to download model files
+  - `(cd post-training && ./export-inference.sh)` exports .pb file.
+  - `cd object-detection`, `python detect.py <path-to-file-to-be-detected>.jpg`, for example to run on test image that comes with the repo: `python detect.py test-images/jetpens.jpg`, the image with bounding boxes will appear in `output/jetpens.jpg` (in this case overwriting it as it's included in the repository)
 
